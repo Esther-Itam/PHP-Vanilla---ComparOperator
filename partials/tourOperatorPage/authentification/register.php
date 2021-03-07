@@ -10,7 +10,7 @@ session_start();
 $erreur = "";
 
 include '../../../db/db.php';
-/* tour_operators.name != users.username */
+
 /* **************************************Select button *********************************** */
 
 $allUsername = $pdo->query('SELECT DISTINCT * 
@@ -51,6 +51,7 @@ if (isset($valider)) {
    }
 }
 ?>
+
 <!DOCTYPE html>
 <html>
 
@@ -112,11 +113,11 @@ if (isset($valider)) {
             <div class="col s4 center">
                <div class="erreur"><?php echo $erreur ?></div>
                <form name="fo" method="POST" action="">
-               
+
                   <h5>Les tours opérateurs entrés par l'administrateur et n'ayant pas de compte sont présents dans la liste</h5>
-                  
+
                   <div class="input-field col s12">
-                  <input type="hidden" name="id_tour_operator" value="1">
+                     <input type="hidden" name="id_tour_operator" value="1">
 
                      <select name="username">
                         <option value="" disabled selected>Choississez votre identifiant</option>

@@ -14,6 +14,7 @@ else
 		" dans votre espace personnel";
 
 include './db/db.php';
+/* ***************************************Destinations display **************************************** */
 
 $getDestinations = $pdo->query("SELECT * 
                                 FROM destinations
@@ -198,9 +199,9 @@ $destinations = $getDestinations->fetchAll();
 
 										<button class="btn btn-info" class="favorite styled" type="submit">Modifier</button>
 									</div>
-								
+
 								</form>
-								<?php } ?>
+							<?php } ?>
 						</div>
 					</div>
 				</div>

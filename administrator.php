@@ -1,5 +1,7 @@
 <?php
+
 session_start();
+
 if ($_SESSION["autoriser"] != "oui") {
   header("location:./partials/administratorPage/authentification/login.php");
   exit();
@@ -15,18 +17,12 @@ else
 
 include './db/db.php';
 
-//Afficher les caractéristiques des tours opérateurs
+/* ********************************Tour operator feature display ******************************* */
+
 $getTourOperators = $pdo->query('SELECT id, name, grade, link, is_premium FROM tour_operators');
 
 $tourOperators = $getTourOperators->fetchAll();
 
-$getDestinations = $pdo->query('SELECT * 
-                                FROM destinations
-                                INNER JOIN tour_operators
-                                ON destinations.id_tour_operator = tour_operators.id 
-                                ORDER BY tour_operators.name');
-
-$destinations = $getDestinations->fetchAll();
 ?>
 
 <!DOCTYPE html>

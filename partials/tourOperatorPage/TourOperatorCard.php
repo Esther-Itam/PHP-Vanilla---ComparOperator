@@ -1,16 +1,16 @@
-<?php 
+<?php
 include './db/db.php';
-//Afficher les caractéristiques des tours opérateurs
-$getTourOperators = $pdo->query('SELECT id, name, grade, link, is_premium FROM tour_operators');
 
-$tourOperators = $getTourOperators->fetchAll();
+/* **************************************Tour Operator card display ************************ */
 
 $getDestinations = $pdo->query("SELECT * 
                                 FROM destinations
                                 INNER JOIN tour_operators
 								                ON destinations.id_tour_operator = tour_operators.id
-								                WHERE tour_operators.name = '" .$_SESSION['username']. "'");
+								                WHERE tour_operators.name = '" . $_SESSION['username'] . "'");
+
 $destinations = $getDestinations->fetchAll();
+
 ?>
 
 <?php foreach ($destinations as $destination) { ?>
@@ -21,7 +21,9 @@ $destinations = $getDestinations->fetchAll();
         <img class="activator" src="<?= $destination["picture"] ?>">
       </div>
       <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4"><font color="#26a69a"><?= $destination["location"] ?><i class="material-icons right">more_vert</i></font></span>
+        <span class="card-title activator grey-text text-darken-4">
+          <font color="#26a69a"><?= $destination["location"] ?><i class="material-icons right">more_vert</i></font>
+        </span>
         <span class="itemPrice">
           <font color="#ff5733" size="5pt"><?= $destination["price"] ?></font>
           <font color="#000" size="4pt"> &euro;</font>

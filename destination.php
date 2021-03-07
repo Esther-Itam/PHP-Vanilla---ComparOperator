@@ -20,12 +20,12 @@
 
 	<!-- ------------------------------------------------Parallax --------------------------------------------------- -->
 
-	<?php include "partials/destinationPage/destinationParallax.php" ?>	
-	
+	<?php include "partials/destinationPage/destinationParallax.php" ?>
+
 	<!-- ------------------------------------------------Destination card--------------------------------------------------- -->
 
-	<?php include "partials/destinationPage/destinationCard.php" ?>	
-	
+	<?php include "partials/destinationPage/destinationCard.php" ?>
+
 	<!-- ------------------------------------------------Footer--------------------------------------------------- -->
 
 	<?php include "partials/footer.php" ?>

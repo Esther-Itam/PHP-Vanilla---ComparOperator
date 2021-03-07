@@ -1,4 +1,5 @@
 <?php
+/* ******************************************Delete destinations processing ****************************** */
 
 $pdo = new PDO(
     'mysql:host=localhost;dbname=comparoperator;charset=utf8',
@@ -9,7 +10,10 @@ $pdo = new PDO(
 
 $location= $_POST['id_destination'];
 
-$delete_destination = $pdo -> prepare('DELETE FROM destinations WHERE id_destination = ?');
+$delete_destination = $pdo -> prepare('DELETE FROM destinations 
+                                       WHERE id_destination = ?');
+
 $delete_destination -> execute([$location]);
+
 
 header('location: ../../tourOperator.php');

@@ -1,15 +1,18 @@
 <?php
-
+/* ***************************************Delete tour operator ************************** */
 $pdo = new PDO(
-    'mysql:host=localhost;dbname=comparoperator;charset=utf8',
-    'root',
-    '',
-      [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
-  );
+  'mysql:host=localhost;dbname=comparoperator;charset=utf8',
+  'root',
+  '',
+  [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
+);
 
-$name= $_POST['name'];
+$name = $_POST['name'];
 
-$delete_tourOperator = $pdo -> prepare('DELETE FROM tour_operators WHERE name = ?');
-$delete_tourOperator -> execute([$name]);
+$delete_tourOperator = $pdo->prepare('DELETE FROM tour_operators 
+                                      WHERE name = ?');
 
-header('location: ../../administrator.php'); 
+$delete_tourOperator->execute([$name]);
+
+
+header('location: ../../administrator.php');

@@ -1,15 +1,16 @@
-<?php include './db/db.php';
+<?php
 
+include './db/db.php';
+
+/* ******************************************Animated card display ****************** */
 $getDestinations = $pdo->query('SELECT * 
                                 FROM destinations
                                 INNER JOIN tour_operators
-                                ON destinations.id_tour_operator = tour_operators.id WHERE is_premium = 1');
+                                ON destinations.id_tour_operator = tour_operators.id 
+                                WHERE is_premium = 1');
 
 $destinations = $getDestinations->fetchAll();
 
-$modifyDestinations = $pdo->query('SELECT id_destination, location, price, picture, comments FROM destinations');
-
-$modifications = $modifyDestinations->fetchAll();
 ?>
 
 <?php foreach ($destinations as $destination) { ?>
@@ -39,7 +40,9 @@ $modifications = $modifyDestinations->fetchAll();
                     <div class="card__price-box">
                         <p class="card__price-only">Seulement</p>
                         <p class="card__price-value"><?= $destination["price"] ?> &euro;</p>
-                        <p><font size="5pt">/ semaine</font></p>
+                        <p>
+                            <font size="5pt">/ semaine</font>
+                        </p>
                     </div>
                     <form action="./destination.php" method="GET">
                         <input type="hidden" name="id" value="<?= $destination["location"] ?>">

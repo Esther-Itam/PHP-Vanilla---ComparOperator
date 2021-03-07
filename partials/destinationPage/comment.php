@@ -7,24 +7,16 @@ $pdo = new PDO(
     [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]
 );
 
+/* ****************************Comments display ********************************** */
 $id_location = $_GET['id'];
-/* $id_tour_operator = $_GET['id']; */
 
 $showComments = $pdo->prepare('SELECT * FROM reviews WHERE id_location = ?');
 $showComments->execute([$_GET['id']]);
 $comments = $showComments->fetchAll();
 
-
-$getDestinations = $pdo->query('SELECT * 
-                                FROM destinations
-                                INNER JOIN tour_operators
-                                ON destinations.id_tour_operator = tour_operators.id');
-
-$destinations = $getDestinations->fetchAll();
-
 ?>
 
-<!-- --------------------------------------Laisser un commentaire-------------------------------------- -->
+<!-- --------------------------------------Post comments-------------------------------------- -->
 <li>
     <div class="collapsible-header"><i class="material-icons">chat_bubble_outline</i>Laisser un commentaire</div>
     <div class="collapsible-body">
@@ -33,7 +25,7 @@ $destinations = $getDestinations->fetchAll();
                 <div class="col l4 s6 center">
                     <div>
                         <h4>Poster un commentaire</h4>
-                        <form method='POST' action="./partials/destinationPage/comment-inc.php">
+                        <form method='POST' action="./partials/destinationPage/commentProcessing.php">
                             <input type='hidden' name='id_location' value="<?= $id_location ?>">
                             <div class="input-field col s6">
                                 <i class="material-icons prefix">
@@ -57,7 +49,7 @@ $destinations = $getDestinations->fetchAll();
     </div>
 </li>
 
-<!-- --------------------------------------Voir les commentaires-------------------------------------- -->
+<!-- --------------------------------------See comments-------------------------------------- -->
 <li>
     <div class="collapsible-header"><i class="material-icons">chat_bubble_outline</i><?= count($comments) ?> commentaires</div>
     <div class="collapsible-body">
@@ -75,16 +67,20 @@ $destinations = $getDestinations->fetchAll();
                                     <i class="material-icons prefix">
                                         <font color="#26a69a">account_box</font>
                                     </i>
-                                     <input id="disabled" type="text" class="validate" name="name" placeholder="Pseudo" disabled value="<?= $comment["author"] ?>">
-                                    <label for="disabled"><font color="#26a69a">Pseudo</font></label> 
+                                    <input id="disabled" type="text" class="validate" name="name" placeholder="Pseudo" disabled value="<?= $comment["author"] ?>">
+                                    <label for="disabled">
+                                        <font color="#26a69a">Pseudo</font>
+                                    </label>
                                 </div>
                                 <div class="input-field col s6">
                                     <i class="material-icons prefix">format_align_center</i>
                                     <input id="disabled" type="text" class="validate" name="message" placeholder="Commentaire" disabled value="<?= $comment["message"] ?>">
-                                    <label for="disabled"><font color="#26a69a">Commentaire</font></label>
+                                    <label for="disabled">
+                                        <font color="#26a69a">Commentaire</font>
+                                    </label>
                                 </div>
                                 <div class="input-field col s6">
-                                 <input id="disabled" name="created_at" class="validate" disabled value="<?= $comment["created_at"] ?>">
+                                    <input id="disabled" name="created_at" class="validate" disabled value="<?= $comment["created_at"] ?>">
                                 </div>
                                 </br>
                             <?php } ?>

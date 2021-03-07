@@ -2,19 +2,23 @@
 
 include './db/db.php';
 
+/* *****************************************Destinations display ************************************** */
 $location = $_GET['id'];
 
 $displayDestinations = $pdo->prepare('SELECT * 
-                                FROM destinations
-                                INNER JOIN tour_operators
-                                ON destinations.id_tour_operator = tour_operators.id WHERE location = ?');
+                                	  FROM destinations
+                                	  INNER JOIN tour_operators
+                                	  ON destinations.id_tour_operator = tour_operators.id 
+									  WHERE location = ?');
+
 $displayDestinations->execute([$_GET['id']]);
+
 $destinations = $displayDestinations->fetchAll();
+
 ?>
 
-
+<!-- ----------------------------------------Destinations display---------------------------- -->
 <?php foreach ($destinations as $destination) { ?>
-
 	<div class="col s12 m7">
 		<h3 class="header">
 			<font color="#114944"><?= $destination["name"] ?></font>
@@ -38,13 +42,12 @@ $destinations = $displayDestinations->fetchAll();
 						<font color="#000" size="5pt"> &euro;</font>
 					</span>
 				</div>
-
-
 			</div>
 		</div>
 	</div>
 
 <?php } ?>
+<!-- -----------------------------------Comments display -------------------------- -->
 <div class="col s12 m7">
 	<ul class="collapsible">
 		<?php include "comment.php"; ?>
