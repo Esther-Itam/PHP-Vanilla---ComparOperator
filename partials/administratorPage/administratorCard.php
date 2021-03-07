@@ -1,4 +1,6 @@
-<?php include './db/db.php';
+<?php
+/* ***************************************Administrator Card ************************************** */ 
+include './db/db.php';
 
 //Afficher les caractéristiques des tours opérateurs
 $getTourOperators = $pdo->query('SELECT id, name, grade, link, is_premium FROM tour_operators');

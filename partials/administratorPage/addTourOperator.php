@@ -1,5 +1,5 @@
 <?php 
-
+/* ************************************Add Tour Operator ******************************************** */
 $pdo = new PDO(
     'mysql:host=localhost;dbname=comparoperator;charset=utf8',
     'root',
