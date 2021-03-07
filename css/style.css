@@ -1,0 +1,303 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+p {
+  line-height: 2rem;
+}
+
+.sidenav-trigger {
+  color: #26a69a;
+}
+
+.parallax-container {
+  min-height: 380px;
+  line-height: 0;
+  height: auto;
+  color: rgba(255,255,255,.9);
+}
+  .parallax-container .section {
+    width: 100%;
+  }
+
+@media only screen and (max-width : 992px) {
+  .parallax-container .section {
+    position: absolute;
+    top: 40%;
+  }
+  #index-banner .section {
+    top: 10%;
+  }
+}
+
+@media only screen and (max-width : 600px) {
+  #index-banner .section {
+    top: 0;
+  }
+}
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+  font-size: inherit;
+}
+
+footer.page-footer {
+  margin: 0;
+}
+
+/*************************************** Animated card *********************************************************/
+ 
+.card_animated {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  position: relative;
+  height: 35rem;
+  width: 80%;
+}
+
+  .card__side {
+    height: 35rem;
+    transition: all .8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    overflow: hidden;
+        
+    box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15); }
+    .card__side--front {
+      background-color: #fff; }
+    .card__side--back {
+      transform: rotateY(180deg); }
+      .card__side--back-1 {
+        background-image: linear-gradient(to right bottom, #26a69a, #114944); }
+  .card:hover .card__side--front {
+    transform: rotateY(-180deg); }
+  .card:hover .card__side--back {
+    transform: rotateY(0); }
+  .card__picture {
+    
+    background-size: cover;
+    height: 15rem;
+    background-blend-mode: screen;
+    clip-path: polygon(0 0, 100% 0, 100% 75%, 0 100%); }
+    .card__picture--1 {
+      background-image: linear-gradient(to right bottom, #ffb900, #ff7730), url(https://picsum.photos/300/250?random=5); }
+  .card__heading {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 200;
+    position: absolute;
+    top: 7rem;
+    right: 2rem;
+    text-align: right;
+    width: 54%; }
+  .card__heading-span {
+    padding: .5rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone; }
+    .card__heading-span--1 {
+      background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.85), rgba(255, 119, 48, 0.85)); }
+  .card__details {
+    padding: 1rem; }
+    .card__details ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto; }
+      .card__details ul li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem; }
+        .card__details ul li:not(:last-child) {
+          border-bottom: 1px solid #eee; }
+  .card__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+  .card__price-box {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 8rem; }
+  .card__price-only {
+    font-size: 2.4rem;
+    text-transform: uppercase; }
+  .card__price-value {
+    font-size: 4.5rem;
+    font-weight: 100; }
+    
+    
+.btn--animated {
+  animation: fadeInUp .5s ease-out;
+  animation-fill-mode: backwards; }
+
+.btn:link, .btn:visited {
+  text-transform: uppercase;
+  padding: 1.4rem 2rem;
+  display: inline;
+  transition: all .2s;
+  color: initial;
+  position: relative;
+  font-size: 1.6rem; }
+
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.2); }
+
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2); }
+
+.btn::after {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .2s; }
+
+.btn::after {
+  background: #fff; }
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0; }
+
+.btn--white {
+  background-color: #fff;
+  border-radius: 5px; }
+
+.text-center {
+  text-align: center; }
+
+.img-responsive{
+  width: 100%;
+  height: 210px;
+}  
+
+.destinationLink{
+  background : 0;
+  border-style : none;
+
+}
+
+.destinationLink:hover{
+  padding-bottom: 1px;
+  background-color:#114944;
+
+}
+
+.card .card-image img{
+  height: 200px;
+
+}
+
+.card{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+}
+
+.collapsible li{
+  background-color: #114944;
+  color: #26a69a;
+}
+
+.range{
+  width:50%;
+  margin: 0;
+
+}
+
+input{
+  color: #26a69a;
+}
+
+.locationsCard{
+  background-color: #114944;
+
+}
+
+.administratorCard{
+  background-color: #114944;
+}
+
+.administratorLink{
+  background : 0;
+  border-style : none;
+}
+
+.administratorLink:hover{
+  color: #114944;
+
+}
+
+textarea{
+  color: #26a69a;
+}
+
+.authentificationForm{
+  margin: 0 auto;
+  padding:100px;
+
+}
+
+.newAccount{
+  color:#26a69a;
+}
+
+nav a{
+  color: #26a69a;
+}
+
+h5{
+  margin-bottom: 50px;
+  color: #26a69a;
+}
+
+.button{
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
+  color:white;
+  margin-right: 24px;
+  -webkit-transition: color .3s ease;
+  transition: color .3s ease;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 2px;
+  display: inline-block;
+  height: 36px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-transform: uppercase;
+  vertical-align: middle;
+  -webkit-tap-highlight-color: transparent;
+  background-color: #26a69a;
+}
+
+.button:hover{
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.14), 0 1px 7px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -1px rgba(0, 0, 0, 0.2);
+  background-color: #2bbbad;
+}
+
+svg{
+  width:40px;
+  fill:#114944;
+  margin-left: 30%;
+}
+
