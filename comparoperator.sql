@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost:3306
--- Généré le : Dim 07 mars 2021 à 08:39
+-- Généré le : Dim 07 mars 2021 à 09:49
 -- Version du serveur :  5.7.24
 -- Version de PHP : 7.4.14
 
@@ -92,8 +92,7 @@ CREATE TABLE `reviews` (
 INSERT INTO `reviews` (`id`, `message`, `author`, `id_location`, `created_at`) VALUES
 (21, 'Super voyage!', 'Ludo', 'Cambodge', '2021-03-04 16:39:00'),
 (22, 'Merci pour cette organisation!', 'Sophie', 'Philipines', '2021-03-04 16:42:06'),
-(23, 'Paysages à couper le souffle!', 'Arnaud', 'Martinique', '2021-03-05 10:26:24'),
-(24, 'ff', 'ff', 'Los Angeles', '2021-03-07 08:38:07');
+(23, 'Paysages à couper le souffle!', 'Arnaud', 'Martinique', '2021-03-05 10:26:24');
 
 -- --------------------------------------------------------
 
@@ -138,8 +137,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password`, `id_tour_operator`) VALUES
-(11, 'FRAM', '1ebee5b3bcac949e0f3c75dff22b4ad2', 3),
-(18, 'Tui', '9e85181ac3f10499ff3a66980f48c7cb', 1);
+(11, 'FRAM', '1ebee5b3bcac949e0f3c75dff22b4ad2', 3);
 
 --
 -- Index pour les tables déchargées
@@ -191,25 +189,25 @@ ALTER TABLE `administrator`
 -- AUTO_INCREMENT pour la table `destinations`
 --
 ALTER TABLE `destinations`
-  MODIFY `id_destination` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_destination` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 
 --
 -- AUTO_INCREMENT pour la table `reviews`
 --
 ALTER TABLE `reviews`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `tour_operators`
 --
 ALTER TABLE `tour_operators`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Contraintes pour les tables déchargées
